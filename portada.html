@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1f5592" />
+        <meta name="author" content="Felipe Alberto Cortez Orellana" />
+        <title>DISEÑO — GUIATURAS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body class="bg-light">
+        <nav class="fixed-top bg-light" style="opacity: 0.95;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <div class="row align-items-center">
+                            <div class="col-6 py-3">
+                                <h1 class="float-start fs-6 m-0 p-0">DISEÑO — GUIATURAS</h1>
+                            </div>
+                            <div class="col-6 py-3">
+                                <select class="form-select form-select-sm w-50 float-end m-0 py-1 px-2" onchange="location = this.value;">
+                                    <option value="#">MENÚ</option>
+                                    <option value="index.html">Abecé</option>
+                                    <option value="comisiones.html">Comisiones</option>
+                                    <option value="evaluaciones.html">Evaluaciones</option>
+                                    <option value="guias.html">Guías</option>
+                                    <option value="memorias.html">Memorias</option>                                  
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                    <h2 class="display mt-5 mb-4"><a href="memorias.html" class="link-secondary link-opacity-75 link-offset-0 link-underline-opacity-25 link-underline-opacity-75-hover">Memorias</a>: Son 6 los datos a considerar en la portada</h2>
+                    <p>
+                        Por favor lea con atención la indicación a la izquierda, y tome como referencia lo que está a la derecha. Podrá hacer las modificaciones que estime conveniente, siempre y cuando respete lo indicado para los 6 datos a
+                        considerar.
+                    </p>
+                </div>
+                <div class="col-12 col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto">
+                    <div id="output" class="mx-1 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">
+                        <div id="printable">
+                            <table class="table table-bordered small align-middle shadow-sm">
+                                <tr>
+                                    <td class="w-50 text-body-secondary">
+                                        <span class="numerado">1</span> Incluye arriba, a la izquierda,
+                                        <a href="https://uchile.cl/presentacion/institucionalidad/simbolos/escudo" target="_blank" class="link-secondary">el escudo distintivo de la Universidad de Chile</a>. A la derecha del escudo va el
+                                        nombre de la institución a la que se pone en consideración la memoria
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-sm-11 col-md-10 col-lg-9 me-auto">
+                                                <div class="row align-items-end">
+                                                    <div class="col-4 col-md-3">
+                                                        <img src="https://uchile.cl/.imaging/stk/uchile/nav-lateral-ancho/dam/imagenes/Uchile/imagenes-contenidos-generales/7910_0_escudouchiledescargar_S/jcr:content/escudouchiledescargar.jpg.jpg" class="w-100"/>
+                                                    </div>
+                                                    <div class="col-8 col-md-9">
+                                                        <p class="m-0 p-0 small">
+                                                            UNIVERSIDAD DE CHILE<br />
+                                                            Facultad de Arquitectura y Urbanismo<br />
+                                                            Escuela de Pregrado
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-50 text-body-secondary">
+                                        <span class="numerado">2</span> En lugar central va el nombre del trabajo. Este nombre debe ser claro, conciso, específico y, en lo posible, referir expresamente a las variables o dimensiones
+                                        involucradas.
+                                    </td>
+                                    <td class="text-center">
+                                        <p id="titulando" class="fs-5">Nombre del trabajo</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-50 text-body-secondary"><span class="numerado">3</span> Debajo del nombre del trabajo, se identifica el título al que se opta.</td>
+                                    <td class="text-center">
+                                        <p id="optando">Memoria presentada para optar a …</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-50 text-body-secondary">
+                                        <span class="numerado">4</span> Debajo de la identificación del título al que se opta, van NOMBRES Y APELLIDOS de la/el estudiante que presenta la memoria, EN MAYÚSCULAS.
+                                    </td>
+                                    <td class="text-center">
+                                        <p id="nombrando">NOMBRE NOMBRE APELLIDO APELLIDO</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-50 text-body-secondary">
+                                        <span class="numerado">5</span> Y debajo del nombre y apellidos de quien presenta la memoria, van nombres y apellidos de su tutor(a), precedidos por un: "PROFESOR GUÍA" o “PROFESORA GUÍA”, según
+                                        corresponda.
+                                    </td>
+                                    <td class="text-center">
+                                        <p id="guiando">
+                                            PROFESOR/A GUÍA<br />
+                                            NOMBRE APELLIDO APELLIDO
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-50 text-body-secondary">
+                                        <span class="numerado">6</span> El último dato en portada se divide en dos renglones. En un primer renglón se indica la ciudad y el país, y en el segundo renglón se indica el año de publicación.
+                                    </td>
+                                    <td class="text-center">
+                                        <p>
+                                            SANTIAGO DE CHILE<br />
+                                            2023<!--<span id="year"></span>-->
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="text-center my-4">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+                            <a class="btn btn-outline-secondary" href="memorias.html">Volver</a>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Rellenar</button>
+                            <input class="btn btn-outline-secondary" type="button" onclick="printDiv('output')" value="Imprimir" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <p class="small d-flex justify-content-between align-items-center text-body-secondary">
+                            <span><span class="d-none d-lg-inline">Desarrollado por </span><a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
+                            <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Para rellenar -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Rellenar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="datos">
+                            <div class="mb-3">
+                                <label for="titular" class="form-label">Título de su memoria</label><br />
+                                <textarea name="titular" class="w-100"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="optar" class="form-label">Grado al que opta</label><br />
+                                <select name="optar" class="form-select w-100">
+                                    <option selected>Seleccionar…</option>
+                                    <option value="Memoria para optar al grado académico de Licenciada en Diseño">Licenciada en Diseño</option>
+                                    <option value="Memoria para optar al grado académico de Licenciado en Diseño">Licenciado en Diseño</option>
+                                    <option value="Memoria para optar al título de Diseñador">Diseñador</option>
+                                    <option value="Memoria para optar al título de Diseñadora">Diseñadora</option>
+                                    <option value="Memoria para optar al título de Diseñador mención Industrial y Servicios">Diseñador, mención Industrial y Servicios</option>
+                                    <option value="Memoria para optar al título de Diseñadora mención Industrial y Servicios">Diseñadora, mención Industrial y Servicios</option>
+                                    <option value="Memoria para optar al título de Diseñador mención Visualidad y Medios">Diseñador, mención Visualidad y Medios</option>
+                                    <option value="Memoria para optar al título de Diseñadora mención Visualidad y Medios">Diseñadora, mención Visualidad y Medios</option>
+                                    <option value="Memoria para optar al título de Diseñador Gráfico">Diseñador Gráfico</option>
+                                    <option value="Memoria para optar al título de Diseñadora Gráfica">Diseñadora Gráfica</option>
+                                    <option value="Memoria para optar al título de Diseñador Industrial">Diseñador Industrial</option>
+                                    <option value="Memoria para optar al título de Diseñadora Industrial">Diseñadora Industrial</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="apellidop" class="form-label">Su apellido <em>paterno</em>:</label><br />
+                                <input type="text" name="apellidop" class="w-100" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="apellidom" class="form-label">Su apellido <em>materno</em>:</label><br />
+                                <input type="text" name="apellidom" class="w-100" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombres" class="form-label">Sus nombre(s):</label><br />
+                                <input type="text" name="nombres" class="w-100" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="guiar" class="form-label">Su Profesor/a Guía</label><br />
+                                <input list="profe" type="text" name="guiar" class="w-100" />
+                                <datalist id="profe">
+                                    <option value="Profesora Jenny Abud Carrillo"></option>
+                                    <option value="Profesora Paola Benavides Bermúdez"></option>
+                                    <option value="Profesor Juan Calderón Reyes"></option>
+                                    <option value="Profesora Ingrid Calvo Ivanovic"></option>
+                                    <option value="Profesor Eduardo Castillo Espinoza"></option>
+                                    <option value="Profesor Felipe Cortez Orellana"></option>
+                                    <option value="Profesora Paola De la Sotta Lazzerini"></option>
+                                    <option value="Profesor Pablo Domínguez González"></option>
+                                    <option value="Profesor Sergio Donoso Cisternas"></option>
+                                    <option value="Profesor Rodrigo Dueñas Santander"></option>
+                                    <option value="Profesora Pamela Gatica Ramirez"></option>
+                                    <option value="Profesor Cristián Gómez Moya"></option>
+                                    <option value="Profesor Rubén Jacob Dazarola"></option>
+                                    <option value="Profesora Lorna Lares López"></option>
+                                    <option value="Profesor Juan Carlos Lepe Muñoz"></option>
+                                    <option value="Profesor Felix Maldonado De la Fuente"></option>
+                                    <option value="Profesor José Marín Pacheco"></option>
+                                    <option value="Profesor Iván Méndez Olivares"></option>
+                                    <option value="Profesor Alfredo Mora Briones"></option>
+                                    <option value="Profesor Héctor Morales Morgado"></option>
+                                    <option value="Profesora María Paz Morales Mujica"></option>
+                                    <option value="Profesor Pablo Nuñez Gutiérrez"></option>
+                                    <option value="Profesora Verónica Ode Saleh"></option>
+                                    <option value="Profesor Roberto Osses Flores"></option>
+                                    <option value="Profesor Sebastián Pagueguy Fenner"></option>
+                                    <option value="Profesor Alejandro Pantoja Sánchez"></option>
+                                    <option value="Profesora Luciana Pastor Martínez"></option>
+                                    <option value="Profesor René Perea Morales"></option>
+                                    <option value="Profesor Bruno Perelli Soto"></option>
+                                    <option value="Profesora Gabriela Pradenas Guentherodt"></option>
+                                    <option value="Profesor Daniel Reyes León"></option>
+                                    <option value="Profesora Macarena Ruiz Balart"></option>
+                                    <option value="Profesora Mónica Santibañez Boric"></option>
+                                    <option value="Profesora Rebeca Silva Roquefort"></option>
+                                    <option value="Profesor Leonardo Soto Calquin"></option>
+                                    <option value="Profesor Hans Stange Marcus"></option>
+                                    <option value="Profesor Mauricio Tapia Reyes"></option>
+                                    <option value="Profesor Rodrigo Vera Manríquez"></option>
+                                    <option value="Profesor Mauricio Vico Sánchez"></option>
+                                    <option value="Profesora Andrea Wechsler Pizarro"></option>
+                                    <option value="Profesora Mariana Young Araya"></option>
+                                    <option value="Profesor Osvaldo Zorzano Betancourt"></option>
+                                </datalist>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="input" data-bs-dismiss="modal">Rellenar y cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <script>
+            let d = new Date();
+            let year = d.getFullYear();
+            //document.querySelector("#year").innerHTML = `${year}`;
+
+            function printDiv(divName) {
+                var printContents = document.getElementById(divName).innerHTML;
+                var originalContents = document.body.innerHTML;
+
+                document.body.innerHTML = printContents;
+
+                window.print();
+
+                document.body.innerHTML = originalContents;
+            }
+
+            document.getElementById("input").addEventListener("click", function () {
+                let nombreCompleto =
+                    document.querySelector('input[name="nombres"]').value.toUpperCase() +
+                    " " +
+                    document.querySelector('input[name="apellidop"]').value.toUpperCase() +
+                    " " +
+                    document.querySelector('input[name="apellidom"]').value.toUpperCase();
+
+                let leGuia = document.querySelector('input[name="guiar"]').value.toUpperCase();
+
+                let nombreGuia;
+
+                if (leGuia.includes("PROFESORA")) {
+                    nombreGuia = leGuia.replace("PROFESORA", "PROFESORA GUÍA<br>");
+                } else {
+                    nombreGuia = leGuia.replace("PROFESOR", "PROFESOR GUÍA<br>");
+                }
+
+                document.querySelector("#titulando").innerHTML = document.querySelector('textarea[name="titular"]').value;
+
+                document.querySelector("#optando").innerHTML = document.querySelector('select[name="optar"]').value;
+
+                document.querySelector("#nombrando").innerHTML = nombreCompleto;
+
+                document.querySelector("#guiando").innerHTML = nombreGuia;
+            });
+        </script>
+    </body>
+</html>

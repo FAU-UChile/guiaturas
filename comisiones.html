@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1f5592" />
+        <meta name="author" content="Felipe Alberto Cortez Orellana" />
+        <title>DISEÑO — GUIATURAS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body class="bg-light">
+        <nav class="fixed-top bg-light" style="opacity: 0.95;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <div class="row align-items-center">
+                            <div class="col-6 py-3">
+                                <h1 class="float-start fs-6 m-0 p-0">DISEÑO — GUIATURAS</h1>
+                            </div>
+                            <div class="col-6 py-3">
+                                <select class="form-select form-select-sm w-75 float-end m-0 py-1 px-2" onchange="location = this.value;">
+                                    <option value="#">MENÚ</option>
+                                    <option value="index.html">Abecé</option>
+                                    <option value="comisiones.html" selected>Comisiones</option>
+                                    <option value="evaluaciones.html">Evaluaciones</option>
+                                    <option value="guias.html">Guías</option>
+                                    <option value="memorias.html">Memorias</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                    <h2 class="display mt-5 mb-4">Comisiones</h2>
+
+                    <p>Las <a href="evaluaciones.html" class="link-dark">evaluaciones</a> de Seminario de Licenciatura II, Proyecto de Título I y Proyecto de Título II dependen de comisiones. Lo que se indica en el <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> sobre las comisiones es lo que sigue:</p>
+
+                    <p class="mx-3 text-body-secondary small">[Cada comisión de Seminiario de Licenciatura II] será <em>designada por la Jefatura de Carrera</em> y compuesta por tres integrantes, incluido el (la) profesor(a) guía de la mención correspondiente, quienes establecerán la calificación final en una escala de notas de 1 a 7 (Art.9).</p>
+
+                    <p class="mx-3 text-body-secondary small">[Para el proceso de evaluación del Proyecto de Título I] se establecerá una comisión de 3 académicos(as), incluyendo el (la) profesor(a) guía, cuyos integrantes serán <em>propuestos por el (la) Jefe(a) de Carrera, en consulta al profesor guía, y ratificados por el (la) Director(a) de la Escuela de Pregrado</em>. Estos(as) académicos(as) deberán ser docentes de la carrera de Diseño, con jerarquía de Profesor y adscritos al Departamento de Diseño o la Escuela de Pregrado (Art.28).</p>
+
+                    <p class="mx-3 text-body-secondary small">[Para el Proyecto de Título II la] comisión examinadora <em>será designada por el (la) Decano(a) a propuesta del Jefe(a) de Carrera y el(la) Director(a) de la Escuela de Pregrado</em>. Estará compuesta por el Decano(a) o en quien delegue el ejercicio de dicha facultad (quien presidirá la comisión), el (la) profesor(a) guía y dos académicos(as), de jerarquía profesor del Departamento de Diseño o la Escuela de Pregrado (Art.29).</p>
+
+                    <p><em>Coordinación de Título colabora en las designaciones y propuestas que le corresponden a Jefatura de Carrera</em>.</p>
+
+                    <p>Al colaborar, la Coordinación atiende a disponibilidad horaria, mención, especialidad y énfasis de cada docente que participa de las <a href="guiaturas.html" class="link-dark">guiaturas</a>.</p>
+
+                    <p>A continuación pueden consultarse las disponibilidades horarias junto con especialidad y énfasis declarados por 31 académicos(as) con jerarquía de Profesor y adscritos(as) al Departamento de Diseño y la Escuela de Pregrado:</p>
+
+                    <div class="input-group pt-2">
+                        <div class="input-group input-group-sm shadow-sm">
+                            <label class="input-group-text" for="verProfe">Prof. Guía</label>
+                            <select class="form-select" id="verProfe">
+                                <option value="todo">Todos/as</option>
+                                <option value="prof-71099">Ingrid Calvo</option>
+                                <option value="prof-40224">Eduardo Castillo</option>
+                                <option value="prof-51470">Felipe Cortez</option>
+                                <option value="prof-21430">Paola de la Sotta</option>
+                                <option value="prof-51141">Pablo Domínguez</option>
+                                <option value="prof-31519">Sergio Donoso</option>
+                                <option value="prof-17335">Rodrigo Dueñas</option>
+                                <option value="prof-16821">Pamela Gatica</option>
+                                <option value="prof-30442">Cristian Gómez</option>
+                                <option value="prof-30742">Rubén Jacob</option>
+                                <option value="prof-57067">Lorna Lares</option>
+                                <option value="prof-10146">Juan Carlos Lepe</option>
+                                <option value="prof-29586">Félix Maldonado</option>
+                                <option value="prof-25820">Iván Méndez</option>
+                                <option value="prof-22471">Héctor Morales</option>
+                                <option value="prof-24818">Pablo Núñez</option>
+                                <option value="prof-39338">Verónica Ode</option>
+                                <option value="prof-59788">Astrid Osorio</option>
+                                <option value="prof-54091">Roberto Osses</option>
+                                <option value="prof-50589">Sebastian Pagueguy</option>
+                                <option value="prof-23435">Rene Perea</option>
+                                <option value="prof-65724">Bruno Perelli</option>
+                                <option value="prof-34257">Gabriela Pradenas</option>
+                                <option value="prof-28329">Daniel Reyes</option>
+                                <option value="prof-35210">Leonardo Soto</option>
+                                <option value="prof-58037">Hans Stange</option>
+                                <option value="prof-34140">Mauricio Tapia</option>
+                                <option value="prof-56222">Rodrigo Vera</option>
+                                <option value="prof-17874">Mauricio Vico</option>
+                                <option value="prof-29097">Andrea Wechsler</option>
+                                <option value="prof-33113">Osvaldo Zorzano</option>
+                            </select>
+
+                            <label class="input-group-text" for="verEnfasis">Énfasis del Proyecto</label>
+                            <select class="form-select" id="verEnfasis">
+                                <option value="todo-enfasis">Todos</option>
+                                <option value="enfasis-1">Creación</option>
+                                <option value="enfasis-2">Innovación</option>
+                                <option value="enfasis-3">Investigación</option>
+                            </select>
+
+                            <label class="input-group-text" for="verMencion">Título profesional</label>
+                            <select class="form-select" id="verMencion">
+                                <option value="toda-mencion">Todos</option>
+                                <option value="mencion-0">Diseñador/a</option>
+                                <option value="mencion-1">Diseñador/a con mención Industrial y Servicios</option>
+                                <option value="mencion-2">Diseñador/a con mención en Visualidad y Medios</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid pb-5">
+            <div class="row">
+                <div class="col-lg-12 col-xl-11 col-xxl-10 mx-auto">
+                    <div class="table-responsive">
+                        <table class="table small bg-white caption-top">
+
+                <caption class="small text-center my-2">
+                        <small class="tematica-cp">&#9632;</small>
+                        Diseño centrado en las personas
+                        <small class="tematica-vm ms-2">&#9632;</small>
+                        Estudios visuales y mediales
+                        <small class="tematica-ip ms-2">&#9632;</small>
+                        Identidad y patrimonio
+                        <small class="tematica-tmp ms-2">&#9632;</small>
+                        Tecnologías, materiales y procesos
+                    </caption>
+
+                            <thead class="align-top">
+                                <tr>
+                                    <th class="w-10">Horario</th>
+                                    <th>LUNES</th>
+                                    <th>MARTES</th>
+                                    <th>MIERCOLES</th>
+                                    <th>JUEVES</th>
+                                    <th>VIERNES</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <th>09:00 a 10.50 hrs.</th>
+                                    <td id="lun_uno"></td>
+                                    <td id="mar_uno"></td>
+                                    <td id="mie_uno"></td>
+                                    <td id="jue_uno"></td>
+                                    <td id="vie_uno"></td>
+                                </tr>
+                                <tr>
+                                    <th>11.00 a 12.50 hrs.</th>
+                                    <td id="lun_dos"></td>
+                                    <td id="mar_dos"></td>
+                                    <td id="mie_dos"></td>
+                                    <td id="jue_dos"></td>
+                                    <td id="vie_dos"></td>
+                                </tr>
+                                <tr>
+                                    <th>15.00 a 16.50 hrs.</th>
+                                    <td id="lun_tres"></td>
+                                    <td id="mar_tres"></td>
+                                    <td id="mie_tres"></td>
+                                    <td id="jue_tres"></td>
+                                    <td id="vie_tres"></td>
+                                </tr>
+
+                                <tr>
+                                    <th>17.00 a 18.50 hrs.</th>
+                                    <td id="lun_cuatro"></td>
+                                    <td id="mar_cuatro"></td>
+                                    <td id="mie_cuatro"></td>
+                                    <td id="jue_cuatro"></td>
+                                    <td id="vie_cuatro"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <p class="small d-flex justify-content-between align-items-center text-body-secondary">
+                            <span><span class="d-none d-lg-inline">Desarrollado por </span><a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
+                            <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+            integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            //todas las celdas
+
+            const lun_uno = document.querySelector("#lun_uno");
+            const lun_dos = document.querySelector("#lun_dos");
+            const lun_tres = document.querySelector("#lun_tres");
+            const lun_cuatro = document.querySelector("#lun_cuatro");
+
+            const mar_uno = document.querySelector("#mar_uno");
+            const mar_dos = document.querySelector("#mar_dos");
+            const mar_tres = document.querySelector("#mar_tres");
+            const mar_cuatro = document.querySelector("#mar_cuatro");
+
+            const mie_uno = document.querySelector("#mie_uno");
+            const mie_dos = document.querySelector("#mie_dos");
+            const mie_tres = document.querySelector("#mie_tres");
+            const mie_cuatro = document.querySelector("#mie_cuatro");
+
+            const jue_uno = document.querySelector("#jue_uno");
+            const jue_dos = document.querySelector("#jue_dos");
+            const jue_tres = document.querySelector("#jue_tres");
+            const jue_cuatro = document.querySelector("#jue_cuatro");
+
+            const vie_uno = document.querySelector("#vie_uno");
+            const vie_dos = document.querySelector("#vie_dos");
+            const vie_tres = document.querySelector("#vie_tres");
+            const vie_cuatro = document.querySelector("#vie_cuatro");
+
+            //otras variables
+
+            Papa.parse("https://raw.githubusercontent.com/disenoUChile/guiatura/main/data/comisiones.csv", {
+                download: true,
+                header: true,
+                complete: function (results) {
+                    console.log(results);
+                    results.data.forEach((d) => {
+                        //1
+                        if (d.horario.includes("lunes-1")) {
+                            lun_uno.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("martes-1")) {
+                            mar_uno.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("miércoles-1")) {
+                            mie_uno.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("jueves-1")) {
+                            jue_uno.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("viernes-1")) {
+                            vie_uno.innerHTML += profesorado(d);
+                        }
+                        //2
+                        if (d.horario.includes("lunes-2")) {
+                            lun_dos.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("martes-2")) {
+                            mar_dos.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("miércoles-2")) {
+                            mie_dos.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("jueves-2")) {
+                            jue_dos.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("viernes-2")) {
+                            vie_dos.innerHTML += profesorado(d);
+                        }
+                        //3
+                        if (d.horario.includes("lunes-3")) {
+                            lun_tres.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("martes-3")) {
+                            mar_tres.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("miércoles-3")) {
+                            mie_tres.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("jueves-3")) {
+                            jue_tres.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("viernes-3")) {
+                            vie_tres.innerHTML += profesorado(d);
+                        }
+
+                        //4
+                        if (d.horario.includes("lunes-4")) {
+                            lun_cuatro.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("martes-4")) {
+                            mar_cuatro.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("miércoles-4")) {
+                            mie_cuatro.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("jueves-4")) {
+                            jue_cuatro.innerHTML += profesorado(d);
+                        }
+                        if (d.horario.includes("viernes-4")) {
+                            vie_cuatro.innerHTML += profesorado(d);
+                        }
+                    });
+
+                    destacar("todo");
+
+                    const selectElement = document.querySelector("#verProfe");
+
+                    selectElement.addEventListener("change", (event) => {
+                        destacar(event.target.value);
+                    });
+
+                    titular("toda-mencion");
+
+                    const selectMencion = document.querySelector("#verMencion");
+
+                    selectMencion.addEventListener("change", (event) => {
+                        titular(event.target.value);
+                    });
+
+                    enfatizar("todo-enfasis");
+
+                    const selectEnfasis = document.querySelector("#verEnfasis");
+
+                    selectEnfasis.addEventListener("change", (event) => {
+                        enfatizar(event.target.value);
+                    });
+                },
+            });
+
+            function profesorado(x) {
+                var enfasis = "";
+                if (x.enfasis.includes("creación")) {
+                    enfasis += "enfasis-1 ";
+                }
+                if (x.enfasis.includes("innovación")) {
+                    enfasis += "enfasis-2 ";
+                }
+                if (x.enfasis.includes("investigación")) {
+                    enfasis += "enfasis-3 ";
+                }
+
+                var mencion = "";
+
+                if (x.mencion.includes("Diseñador/a sin mención")) {
+                    mencion += "mencion-0 ";
+                }
+
+                if (x.mencion.includes("Diseñador/a con mención Industrial y Servicios")) {
+                    mencion += "mencion-1 ";
+                }
+
+                if (x.mencion.includes("Diseñador/a con mención Visualidad y Medios")) {
+                    mencion += "mencion-2 ";
+                }
+
+                var tematica = "";
+
+                if (x.linea.includes("Diseño centrado en las personas")) {
+                    tematica += '<small class="tematica-cp">&#9632;</small>';
+                }
+                if (x.linea.includes("Estudios visuales y mediales")) {
+                    tematica += '<small class="tematica-vm">&#9632;</small>';
+                }
+                if (x.linea.includes("Identidad y patrimonio")) {
+                    tematica += '<small class="tematica-ip">&#9632;</small>';
+                }
+                if (x.linea.includes("Materiales, tecnologías y procesos")) {
+                    tematica += '<small class="tematica-tmp">&#9632;</small>';
+                }
+
+                var nombre = `<div class="me-2 prof prof-${x.perfil_id} ${mencion} ${enfasis}">${tematica} ${x.nombre} ${x.apellidop}</div>`;
+                return nombre;
+            }
+
+            async function destacar(x) {
+                var todas = document.getElementsByClassName("prof");
+                var algunas = document.getElementsByClassName(x);
+
+                if (x !== "todo") {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("opacity-50");
+                        e.classList.remove("fw-bold");
+                        e.classList.remove("opacity-100");
+                    });
+                    Array.from(algunas).forEach((e) => {
+                        e.classList.add("fw-bold");
+                        e.classList.add("opacity-100");
+                    });
+                } else {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("opacity-100");
+                        e.classList.remove("fw-bold");
+                    });
+                }
+            }
+
+            async function titular(x) {
+                var todas = document.getElementsByClassName("prof");
+                var algunas = document.getElementsByClassName(x);
+
+                if (x == "toda-mencion") {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                } else {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("d-none");
+                    });
+                    Array.from(algunas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                }
+            }
+
+            async function enfatizar(x) {
+                var todas = document.getElementsByClassName("prof");
+                var algunas = document.getElementsByClassName(x);
+
+                if (x == "todo-enfasis") {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                } else {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("d-none");
+                    });
+                    Array.from(algunas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>

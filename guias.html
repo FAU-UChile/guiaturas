@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1f5592" />
+        <meta name="author" content="Felipe Alberto Cortez Orellana" />
+        <title>DISEÑO — GUIATURAS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body class="bg-light">
+        <nav class="fixed-top bg-light" style="opacity: 0.95;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <div class="row align-items-center">
+                            <div class="col-6 py-3">
+                                <h1 class="float-start fs-6 m-0 p-0">DISEÑO — GUIATURAS</h1>
+                            </div>
+                            <div class="col-6 py-3">
+                                <select class="form-select form-select-sm w-75 float-end m-0 py-1 px-2" onchange="location = this.value;">
+                                    <option value="#">MENÚ</option>
+                                    <option value="index.html">Abecé</option>
+                                     <option value="comisiones.html">Comisiones</option>                                   
+                                    <option value="evaluaciones.html">Evaluaciones</option>
+                                    <option value="guias.html" selected>Guías</option>
+                                    <option value="memorias.html">Memorias</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                    <h2 class="display mt-5 mb-4">Guías</h2>
+
+                    <p>El <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> establece, originalmente, que:</p>
+
+                    <p class="mx-3 text-body-secondary small mb-2">[El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo <em>la dirección de</em> un(a) académico(a) con jerarquía de <em>Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado</em> que haya desarrollado investigación relacionada con el tema abordado (Art. 9)</p>
+
+                    <p class="mx-3 text-body-secondary small">[Para Profesor/a Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</p>
+
+                    <p>Por un <em>ajuste al reglamento</em> (solicitado por la Escuela de Pregrado al Decanato), queda que <em>tal dirección puede ser directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p>
+
+                    <p>Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I o II), estarán aportando al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR; y quienes lo hacen en Proyecto de Título (I o II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <p class="small d-flex justify-content-between align-items-center text-body-secondary">
+                            <span><span class="d-none d-lg-inline">Desarrollado por </span><a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
+                            <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+            integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+
+        <script>
+            document.addEventListener("scroll", (event) => {
+                document.querySelector("nav").classList.add("shadow-sm");
+            });
+
+            document.addEventListener("scrollend", (event) => {
+                var y = window.scrollY;
+                if (y == 0) {
+                    document.querySelector("nav").classList.remove("shadow-sm");
+                }
+            });
+
+            var parciales = {
+                seminario: [],
+                titulo: []
+            };
+            var total;
+            var profes = [];
+            var docentesSinRepetir;
+            const docentes = document.querySelector("#docentes");
+            var todoSeminario = 0;
+            var todoTitulo = 0;
+
+            const guiades = document.querySelector("#guiades");
+            const guias =  document.querySelector("#profes");
+            const promedio = document.querySelector("#promedio");
+
+            const guiasreglamento = document.querySelector("#profereglamento");
+            const promedioreglamento = document.querySelector("#promedioreglamento");
+
+
+            Papa.parse("https://raw.githubusercontent.com/disenoUChile/titulo/main/data/guiaturas.csv", {
+                download: true,
+                header: true,
+                    dynamicTyping: true,
+                complete: function (results) {
+                    console.log(results);
+                    datos = results.data;
+                    datos.forEach((d) => {
+                        if (d.year == "4") { parciales.seminario.push(d); }
+                        if (d.year == "4") { parciales.titulo.push(d); }
+                        profes.push(d.profe);
+                    });
+                    total = parciales.seminario.length + parciales.titulo.length;
+                    docentesSinRepetir = [...new Set(profes)];
+                    docentesSinRepetir.forEach(x => {
+                        todoSeminario = todoSeminario + seminaristas(x);
+                        todoTitulo = todoTitulo + titulantes(x);
+                        if(x.includes("Rojas Miranda") || x.includes("Marín Pacheco") || x.includes("Tapia Reyes")){
+                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+9</td><td class="text-center fw-bold">${todas(x)+9}</td></tr>`;
+                        } else if(x.includes("Cortez Orellana") || x.includes("Castro Meza") ){
+                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+5</td><td class="text-center fw-bold">${todas(x)+5}</td></tr>`;
+                        } else {
+                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}</td><td class="text-center fw-bold">${todas(x)}</td></tr>`;
+                        }
+
+                    })
+                docentes.innerHTML += `<tr class="fw-bold"><td>TOTAL DE ESTUDIANTES GUIADAS/OS</td><td class="text-center">${todoSeminario}</td><td class="text-center">${todoTitulo+14}</td><td class="text-center fw-bold">${todoSeminario+todoTitulo+14}</td></tr>`
+
+                guiades.innerHTML = todoSeminario+todoTitulo+14;
+                guias.innerHTML = docentesSinRepetir.length;
+                promedio.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/docentesSinRepetir.length);
+
+
+                guiasreglamento.innerHTML = docentesSinRepetir.length-10;
+                promedioreglamento.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/(docentesSinRepetir.length-12));
+
+
+                }
+
+
+
+            });
+            function todas(x) {
+                let numero = 0;
+                datos.forEach(d => {
+                    if (d.profe == x && d.estudiante) {
+                        numero++;
+                    }
+                })
+                return numero;
+            }
+
+            function seminaristas(x) {
+                let numero = 0;
+                datos.forEach(d => {
+                    if (d.profe == x && d.year == "4" && d.estudiante) {
+                        numero++;
+                    }
+                })
+                return numero;
+            }
+
+            function titulantes(x) {
+                let numero = 0;
+                datos.forEach(d => {
+                    if (d.profe == x && d.year == "5" && d.estudiante) {
+                        numero++;
+                    }
+                })
+                return numero;
+            }
+        </script>
+    </body>
+</html>
