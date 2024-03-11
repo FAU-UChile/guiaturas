@@ -40,6 +40,9 @@
                 <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                     <h2 class="display mt-5 mb-4">Guías</h2>
 
+          <div id="aviso"></div>
+
+
                     <p>El <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> establece que:</p>
 
                     <p class="mx-3 text-body-secondary small mb-2">[El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo <em>la dirección de</em> un(a) académico(a) con jerarquía de <em>Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado</em> que haya desarrollado investigación relacionada con el tema abordado (Art. 9)</p>
@@ -78,6 +81,19 @@
         ></script>
 
         <script>
+
+      // INICIO DEL AVISO (HASTA EL 15/04/2024)
+      async function aviso() {
+        const consulta = await fetch("https://disenouchile.github.io/guiaturas/aviso.txt");
+        const data = await consulta.text();
+        if (data) {
+          document.querySelector("#aviso").innerHTML = data;
+        }
+      }
+      aviso().catch((error) => console.error(error));
+      // FIN DEL AVISO (HASTA EL 15/04/2024)
+
+
             document.addEventListener("scroll", (event) => {
                 document.querySelector("nav").classList.add("shadow-sm");
             });

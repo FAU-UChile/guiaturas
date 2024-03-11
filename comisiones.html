@@ -39,8 +39,9 @@
             <div class="row">
                 <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                     <h2 class="display mt-5 mb-4">Comisiones</h2>
+          <div id="aviso"></div>
 
-                    <p>Las <a href="evaluaciones.html" class="link-dark">evaluaciones</a> de Seminario de Licenciatura II, Proyecto de Título I y Proyecto de Título II dependen de comisiones. Lo que se indica en el <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> sobre las comisiones es lo que sigue:</p>
+                    <p>Las <a href="evaluaciones.html" class="link-dark">evaluaciones</a> finales de Seminario de Licenciatura II, Proyecto de Título I y Proyecto de Título II dependen de comisiones. Lo que se indica en el <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> sobre las comisiones es lo que sigue:</p>
 
                     <p class="mx-3 text-body-secondary small">[Cada comisión de Seminiario de Licenciatura II] será <em>designada por la Jefatura de Carrera</em> y compuesta por tres integrantes, incluido el (la) profesor(a) guía de la mención correspondiente, quienes establecerán la calificación final en una escala de notas de 1 a 7 (Art.9).</p>
 
@@ -48,17 +49,16 @@
 
                     <p class="mx-3 text-body-secondary small">[Para el Proyecto de Título II la] comisión examinadora <em>será designada por el (la) Decano(a) a propuesta del Jefe(a) de Carrera y el(la) Director(a) de la Escuela de Pregrado</em>. Estará compuesta por el Decano(a) o en quien delegue el ejercicio de dicha facultad (quien presidirá la comisión), el (la) profesor(a) guía y dos académicos(as), de jerarquía profesor del Departamento de Diseño o la Escuela de Pregrado (Art.29).</p>
 
-                    <p><em>Coordinación de Título colabora en las designaciones y propuestas que le corresponden a Jefatura de Carrera</em>.</p>
+                    <p><em>Coordinación de Título colabora en las designaciones y propuestas que le corresponden a Jefatura de Carrera</em>. Al colaborar, la Coordinación atiende a disponibilidad horaria, mención, especialidad y énfasis declarados por académicas(as), de jerarquía profesor del Departamento de Diseño o la Escuela de Pregrado.</p>
 
-                    <p>Al colaborar, la Coordinación atiende a disponibilidad horaria, mención, especialidad y énfasis de cada docente que participa de las <a href="guias.html" class="link-dark">guiaturas</a>.</p>
-
-                    <p>A continuación pueden consultarse las disponibilidades horarias junto con especialidad y énfasis declarados por 31 académicos(as) con jerarquía de Profesor y adscritos(as) al Departamento de Diseño y la Escuela de Pregrado:</p>
+                    <p>A continuación se despliega un ejemplo de los datos que atiende la Coordinación de Título (los datos del ejemplo corresponde a disponibilidades de segundo semestre 2023).</p>
 
                     <div class="input-group pt-2">
                         <div class="input-group input-group-sm shadow-sm">
                             <label class="input-group-text" for="verProfe">Prof. Guía</label>
                             <select class="form-select" id="verProfe">
                                 <option value="todo">Todos/as</option>
+                                <option value="prof-64686">Christian Basáez</option>
                                 <option value="prof-71099">Ingrid Calvo</option>
                                 <option value="prof-40224">Eduardo Castillo</option>
                                 <option value="prof-51470">Felipe Cortez</option>
@@ -207,6 +207,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <script>
+      // INICIO DEL AVISO (HASTA EL 15/04/2024)
+      async function aviso() {
+        const consulta = await fetch("https://disenouchile.github.io/guiaturas/aviso.txt");
+        const data = await consulta.text();
+        if (data) {
+          document.querySelector("#aviso").innerHTML = data;
+        }
+      }
+      aviso().catch((error) => console.error(error));
+      // FIN DEL AVISO (HASTA EL 15/04/2024)
+
             //todas las celdas
 
             const lun_uno = document.querySelector("#lun_uno");

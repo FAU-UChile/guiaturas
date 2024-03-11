@@ -40,11 +40,14 @@
                 <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                     <h2 class="display mt-5 mb-4">Memorias</h2>
 
+          <div id="aviso"></div>
+
+
                     <p>Memoria es el concepto que aplica habitualmente al informe final para el Examen de Título. Pero lo que se indica a continuación también puede ser aprovechado para el informa final de Seminario de Licenciatura.</p>
 
                     <p><em>Carta es el formato que corresponde a cada página de memoria o informe. </em></p>
                     
-                    <p><em>Quienes estudian diseño tienen la posibilidad de decidir la orientación del formato carta</em>, ajustando márgenes, interlíneas, cuerpos y familias tipográficas y otros elementos como demostración de sus competencias profesionales, yendo más allá de lo normado en el documento <a href="https://repositorio.uchile.cl/pdf/Pauta_de_presentacion_de_tesis_2015.pdf"  class="link-dark">Cómo preparar una tesis</a>, documento que es vinculado al pie de página del <a href="https://repositorio.uchile.cl/" class="link-dark">Repositorio Académico de la Universidad de Chile</a>.
+                    <p><em>Quienes estudian diseño tienen la posibilidad de decidir la orientación del formato carta</em>, ajustando márgenes, interlíneas, familias tipográficas y otros elementos, yendo (como demostración de sus competencias profesionales) más allá de lo normado en el documento <a href="https://repositorio.uchile.cl/pdf/Pauta_de_presentacion_de_tesis_2015.pdf"  class="link-dark">Cómo preparar una tesis</a>.
                     
                     <p><em>La norma que corresponde respetar es la que define las secciones en las memorias o informes presentado a la Universidad de Chile</em>.</p>
                     
@@ -429,6 +432,18 @@
             referrerpolicy="no-referrer"
         ></script>
         <script>
+
+      // INICIO DEL AVISO (HASTA EL 15/04/2024)
+      async function aviso() {
+        const consulta = await fetch("https://disenouchile.github.io/guiaturas/aviso.txt");
+        const data = await consulta.text();
+        if (data) {
+          document.querySelector("#aviso").innerHTML = data;
+        }
+      }
+      aviso().catch((error) => console.error(error));
+      // FIN DEL AVISO (HASTA EL 15/04/2024)
+
             document.addEventListener("scroll", (event) => {
                 document.querySelector("nav").classList.add("shadow-sm");
             });
