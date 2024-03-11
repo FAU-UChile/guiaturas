@@ -55,17 +55,12 @@
                                         nombre de la institución a la que se pone en consideración la memoria
                                     </td>
                                     <td>
-                                        <div class="row">
-                                            <div class="col-sm-11 col-md-10 col-lg-9 me-auto">
-                                                <div class="row align-items-end">
-                                                    <div class="col-4 col-md-3">
+                                        <div class="row p-3 align-items-center">
+                                                    <div class="col-3 col-md-2">
                                                         <img src="https://uchile.cl/.imaging/stk/uchile/nav-lateral-ancho/dam/imagenes/Uchile/imagenes-contenidos-generales/7910_0_escudouchiledescargar_S/jcr:content/escudouchiledescargar.jpg.jpg" class="w-100"/>
                                                     </div>
-                                                    <div class="col-8 col-md-9">
-                                                        <p class="m-0 p-0 small">
-                                                            UNIVERSIDAD DE CHILE<br />
-                                                            <p id="institucion">Nombre de la institución a la que se pone en consideración la memoria</p>
-                                                        </p>
+                                                    <div class="col-9 col-md-10">
+                                                        <p class="m-0 p-0 pt-4 small" id="institucion">Nombre de la institución a la que se pone en consideración la memoria</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -200,6 +195,7 @@
                                 <input list="profe" type="text" name="guiar" class="w-100" />
                                 <datalist id="profe">
                                     <option value="Profesora Jenny Abud Carrillo"></option>
+                                    <option value="Profesor Christian Basáez Villagrán"></option>
                                     <option value="Profesora Paola Benavides Bermúdez"></option>
                                     <option value="Profesor Juan Calderón Reyes"></option>
                                     <option value="Profesora Ingrid Calvo Ivanovic"></option>
@@ -222,6 +218,7 @@
                                     <option value="Profesora María Paz Morales Mujica"></option>
                                     <option value="Profesor Pablo Nuñez Gutiérrez"></option>
                                     <option value="Profesora Verónica Ode Saleh"></option>
+                                    <option value="Profesora Astrido Osorio Muñoz"></option>
                                     <option value="Profesor Roberto Osses Flores"></option>
                                     <option value="Profesor Sebastián Pagueguy Fenner"></option>
                                     <option value="Profesor Alejandro Pantoja Sánchez"></option>
@@ -287,10 +284,13 @@
                     nombreGuia = leGuia.replace("PROFESOR", "PROFESOR GUÍA<br>");
                 }
 
-                if(document.querySelector('select[name="optar"]').value.includes("Licenciad")){
-                    document.querySelector("#institucion").innerHTML = "Facultad de Arquitectura y Urbanismo<br/>Departamento de Diseño"
-                } else {
-                    document.querySelector("#institucion").innerHTML = "Facultad de Arquitectura y Urbanismo<br/>Escuela de Pregrado"
+                if(document.querySelector('select[name="optar"]').value.includes("Diseñ")){
+
+                    if(document.querySelector('select[name="optar"]').value.includes("Licenciad")){
+                        document.querySelector("#institucion").innerHTML = "Universidad de Chile<br/>Facultad de Arquitectura y Urbanismo<br/>Departamento de Diseño"
+                    } else {
+                        document.querySelector("#institucion").innerHTML = "Universidad de Chile<br/>Facultad de Arquitectura y Urbanismo<br/>Escuela de Pregrado"
+                    }
                 }
 
                 document.querySelector("#titulando").innerHTML = document.querySelector('textarea[name="titular"]').value;
