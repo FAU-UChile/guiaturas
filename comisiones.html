@@ -207,16 +207,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <script>
-      // INICIO DEL AVISO (HASTA EL 15/04/2024)
-      async function aviso() {
-        const consulta = await fetch("https://disenouchile.github.io/guiaturas/aviso.txt");
-        const data = await consulta.text();
-        if (data) {
-          document.querySelector("#aviso").innerHTML = data;
-        }
-      }
-      aviso().catch((error) => console.error(error));
-      // FIN DEL AVISO (HASTA EL 15/04/2024)
 
             //todas las celdas
 
