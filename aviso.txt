@@ -1,5 +1,5 @@
 <div class="alert alert-light alert-dismissible fade show mb-4" role="alert" style="margin-left:-0.75em;margin-right:-0.25em">
     <em>JUEVES 14 DE MARZO, 2024 — 15:00 hrs — AUDITORIO FAU</em><br/>
-        <small><em>Charla informativa sobre Guiaturas en Diseño</em> — Charla a cargo de Jefatura de Carrera y Coordinación de Título — Para resolver limitaciones del espacio, se ofrecerá transmisión en línea.</small>: Puedes seguir la charla en <a href="https://meet.google.com/mwx-kghk-hcu" target="_blank">Google Meet</a>.
+        <small><em>Charla informativa sobre Guiaturas en Diseño</em> — Charla a cargo de Jefatura de Carrera y Coordinación de Título — Para resolver limitaciones del espacio, se ofrecerá transmisión en línea: Puedes seguir la charla en <a href="https://meet.google.com/mwx-kghk-hcu" target="_blank" class="link-dark">Google Meet</a></small>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
