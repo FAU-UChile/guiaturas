@@ -33,7 +33,7 @@
     datos.forEach(d => {
       if(d.id != '—'){
     aqui.innerHTML += `<div class="col my-4">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm h-100">
           <div class="card-body">
           <h1 class="fs-5">${d.name}</h1>
           <h3 class="fs-6">Jerarquía: ${d.nivel}</h3>
@@ -41,7 +41,7 @@
           <address class="fs-6 mb-0">${link(d.perfil)}</address>
           </div>
           <ul class="list-group list-group-flush">
-    <li class="list-group-item">${d.descriptor}</li>
+    <li class="list-group-item small">${d.descriptor}</li>
     </ul>
           <div class="card-body">
 
@@ -75,9 +75,9 @@
 
   function link(x){
     if(x.includes("Sin perfil")){
-      return("Sin perfil en Portafolio Académico UCH");
+      return("<small class='text-body-secondary'>Sin perfil en Portafolio Académico</small>");
     } else {
-      return('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16"><path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/><path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/></svg> <a href="'+x+'" class="link-dark link-underline-opacity-25 link-underline-opacity-100-hover" target="_blank">Ver perfil en Portafolio Académico UCH</a>');
+      return('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16"><path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/><path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/></svg> <a href="'+x+'" class="small link-dark link-underline-opacity-25 link-underline-opacity-100-hover" target="_blank">Ver perfil en Portafolio Académico</a>');
     }
   };
 
