@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AÚN NO ESTÁ LISTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center py-5"><h1>LO QUE SIGUE NO ESTÁ LISTO</h1><h2>Estará listo el Lunes 26 a las 11.00 hrs.</h2><h3>Lo subo sólo para que vean la idea y conozcan el destino de los datos en <a href="https://docs.google.com/spreadsheets/d/1i_C65jAbn8N6nVSEdYvWjoR--85f5AvPhY39yA-xjwU/edit?usp=sharing" target="_blank" class="link-dark">su fila de la plantilla ya compartida</a>, y me respondan a un correo de asunto: Horas disponibles para guiaturas.</h3></div>
+    </div>
+  	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui">
+  		
+  	</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+  var datos;
+  const aqui = document.querySelector("#aqui");
+
+
+  Papa.parse("https://raw.githubusercontent.com/disenoUChile/guiaturas/main/data/testing.csv", {
+	download: true,
+	header:true,
+	complete: function(results) {
+
+
+  
+    datos = results.data;
+    console.log(datos);
+    datos.forEach(d => {
+      if(d.id != '—'){
+    aqui.innerHTML += `<div class="col my-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+          <h1 class="fs-5">${d.name}</h1>
+          <h3 class="fs-6">Jerarquía: ${d.nivel}</h3>
+          <h3 class="fs-6">Adscripción: ${d.adscripcion}</h3>
+          <address class="fs-6 mb-0">${link(d.perfil)}</address>
+          </div>
+          <ul class="list-group list-group-flush">
+    <li class="list-group-item">${d.descriptor}</li>
+    </ul>
+          <div class="card-body">
+
+          <p>Líneas de investigación en Seminario de Licenciatura, mención <code>{Acá se desplegará mención marcada en columna P o Q}</code>:</p>
+          <ul>
+            <li><code>{Acá se desplegará cada línea de investigación marcada, en columas I, J, K, L, M, N}</code></li>
+          </ul>
+          <p><strong>${d.cupos_sem}</strong> cupos disponibles en Seminario de Licenciatura I</p>
+          <p>Énfasis en Proyecto de Título de <code>{Acá se desplegará lo marcado en columnas O, P, Q}</code></p>
+          <ul>
+            <li><code>{Acá se desplegará lo marcado en columnas R, S y T}</code></li>
+          </ul>
+          <p><strong>${d.cupos_tit}</strong> cupos disponibles en Proyecto de Título I</p>
+          </div>
+          <div class="card-header">${rol(d.nivel)}</div>
+        </div>
+      </div>`
+    }})
+	}
+});	
+
+
+
+  function rol(x){
+    if(x.includes("Prof.")){
+      return('<small>Por reglamento: <strong>Prof. Guía o Prof. Guía 1</strong></small>');
+    } else {
+      return('<small>Por reglamento: <strong>Prof. Guía 2</strong></small>');
+    }
+  };
+
+  function link(x){
+    if(x.includes("Sin perfil")){
+      return("Sin perfil en Portafolio Académico UCH");
+    } else {
+      return('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16"><path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/><path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/></svg> <a href="'+x+'" class="link-dark link-underline-opacity-25 link-underline-opacity-100-hover" target="_blank">Ver perfil en Portafolio Académico UCH</a>');
+    }
+  };
+
+  function linea1(x){
+    if(x == 1){return("<li>Primera línea</li>")}
+  }
+
+  </script>
+  </body>
+</html>
+
+
+
