@@ -5,31 +5,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1f5592" />
         <meta name="author" content="Felipe Alberto Cortez Orellana" />
-        <title>AÚN NO ESTÁ LISTO</title>
+        <title>LUNES 25 Y MARTES 26 DE MARZO, 2024</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
         <link href="style.css" rel="stylesheet" />
     </head>
     <body class="bg-light">
         <div class="container">
             <div class="row">
-                <div class="col text-center py-5">
-                    <h1>LO QUE SIGUE NO ESTÁ LISTO</h1>
-                    <h2>Estará listo el Lunes 26 a las 11.00 hrs.</h2>
-                    <h3>
-                        Lo subo sólo para que vean la idea y conozcan el destino de los datos en
-                        <a href="https://docs.google.com/spreadsheets/d/1i_C65jAbn8N6nVSEdYvWjoR--85f5AvPhY39yA-xjwU/edit?usp=sharing" target="_blank" class="link-dark">su fila de la plantilla ya compartida</a>, y me respondan a un correo
-                        de asunto: Horas disponibles para guiaturas.
-                    </h3>
+                <div class="col-sm-10 col-md-9 col-lg-8 col-xl-7 mx-auto py-5">
+                    <h1 class="fs-3 px-1 mb-3">Seminario de Licenciatura y Proyecto de Título, en ambos niveles, consiste en un trabajo tutelado.</h1>
 
-                    <div class="btn-group mt-4" role="group">
-                      <a class="btn btn-outline-secondary" href="inscripcion-a-mano.html">Listado completo</a>
-                      <a class="btn btn-outline-secondary" href="inscripcion-a-seminario.html">Con cupos para Seminario <span class="d-none d-lg-inline">de Licenciatura I</span></a>
-                      <a class="btn btn-outline-secondary active" href="inscripcion-a-titulo.html">Con cupos para <span class="d-none d-lg-inline">Proyecto de</span> Título <span class="d-none d-lg-inline">I</span></a>
+                    <p class="lead px-1">La tutela del trabajo de cada estudiante será responsabilidad, directa o indirecta, de <em>un(a) académico(a) con jerarquía de Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado que haya desarrollado investigación relacionada con el tema abordado. Los temas estarán además en directa relación con las temáticas declaradas por los grupos de estudio establecidos en el Departamento de Diseño </em> (Art. 9° en el <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" class="link-dark" target="_blank">Decreto Universitario N° 0053924</a>, de fecha 20 de diciembre de 2018).</p>
+
+                    <p class="px-1">Cuando la responsabilidad de la tutela es directa, cada tutor(a) cumple el rol de <em>Prof. Guía</em>. Cuando es indirecta, cumple el rol de <em>Prof. Guía 1</em> y su tutela es mediada por un(a) <em>Prof. Guía 2</em>.</p>
+
+                    <div class="btn-group mt-4 w-100" role="group">
+                      <a class="btn btn-outline-secondary btn-sm" href="inscripcion-a-mano.html"><span id="cuantosTodos"></span> Tutores(as)</a>
+                      <a class="btn btn-outline-secondary btn-sm" href="inscripcion-a-seminario.html"><span id="cuantosSeminario"></span> con cupos para Seminario <span class="d-none d-lg-inline">de Licenciatura I</span></a>
+                      <a class="btn btn-outline-secondary btn-sm active" href="inscripcion-a-titulo.html"><span id="cuantosTitulo"></span> con cupos para <span class="d-none d-lg-inline">Proyecto de</span> Título <span class="d-none d-lg-inline">I</span></a>
                     </div>
 
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui"></div>
+            <div class="row">
+                <div class="col pt-5 pb-2 px-4">
+                    <p class="small d-flex justify-content-between align-items-center text-body-secondary">
+                        <span>&nbsp;&nbsp;Desarrollado por <a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span> 
+
+                        <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a>&nbsp;&nbsp;</span>
+                    </p>
+                </div>
+            </div>
         </div>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
@@ -76,6 +83,10 @@
                     console.log(soloSeminarioOK);
                     console.log(soloTituloOK);
 
+                    document.querySelector("#cuantosTodos").innerHTML = todosOK.length;
+                    document.querySelector("#cuantosSeminario").innerHTML = soloSeminarioOK.length;
+                    document.querySelector("#cuantosTitulo").innerHTML = soloTituloOK.length;
+
                     //UNA FUNCIÓN QUE PREFIERO DEJAR ACÁ
 
                     function construye(data){
@@ -85,31 +96,23 @@
                             <div class="col my-4">
                                 <div class="card shadow-sm h-100">
                                   <div class="card-header">
-                                  <h1 class="fs-5 mt-2">${nombre(d.name)}</h1>
-                                  <p>Jerarquía: ${d.nivel}<br/>
-                                  Adscripción: ${d.adscripcion}</p>
-                                  <p>${link(d.perfil)}</p>
+                                    <h1 class="fs-5 mt-2">${nombre(d.name)}</h1>
+                                    <p>Jerarquía: ${d.nivel}<br/>
+                                    Adscripción: ${d.adscripcion}</p>
+                                    <p>${link(d.perfil)}</p>
                                   </div>
                                   <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><p class='text-body-secondary mb-1'>${d.descriptor}</p></li>
+                                    <li class="list-group-item"><p class='text-body-secondary mb-1' style="min-height:8rem">${d.descriptor}</p></li>
                                   </ul>
-        <div class="card-body small">
-        <li class="list-group-item"><p>Líneas de investigación en <strong>Seminario de Licenciatura, con sección en mención ${seccion(d.menciones)}</strong>:</p>
-                                  <ul>
-                                    ${lineas(d.lineas)}
-                                  </ul>
-                                  <p><strong>${d.cupos_sem}</strong> cupos disponibles en Seminario de Licenciatura I</p>
-
-                                  </li>
-        <li class="list-group-item">
-                                      <p>Énfasis en <strong>Proyecto de Título Profesional de ${menciones(d.menciones)}</strong>:</p>
-                                  <ul>
-                                    ${enfasis(d.enfasis)}
-                                  </ul>
-                                  <p><strong>${d.cupos_tit}</strong> cupos disponibles en Proyecto de Título I</p>
-      </div>
-
-
+                                  <div class="card-body small">
+                                    <p>Su(s) línea(s) de investigación en <strong>Seminario de Licenciatura, con una sección en mención ${seccion(d.menciones)}</strong>:</p>
+                                    <ul>${lineas(d.lineas)}</ul>
+                                    <p>${disponibleSeminario(d.cupos_sem)}</p>
+                                    <hr style="border-top:1px dotted silver; border-bottom:none;">
+                                    <p class="text">Su(s) énfasis en <strong>Proyecto de Título Profesional de ${menciones(d.menciones)}</strong>:</p>
+                                    <ul>${enfasis(d.enfasis)}</ul>
+                                    <p>${disponibleTitulo(d.cupos_sem)}</p>
+                                  </div>
                                   <div class="card-footer">${rol(d.nivel)}</div>
                                 </div>
                               </div>`
@@ -165,12 +168,24 @@
 
             }
 
+            function disponibleSeminario(x) {
+                if(x == 0){
+                    return("<strong>No tiene cupos</strong> disponibles para tutela en Seminario de Licenciatura I.")
+                } else if(x == 1){
+                    return("Tiene <strong>1 cupo</strong> disponible para tutela en Seminario de Licenciatura I.")
+                } else { 
+                    return("Tiene <strong>" + x + " cupos</strong> disponibles para tutela en Seminario de Licenciatura I.")
+                }
+            }
+
+
             function menciones(x) {
                 let frase = '';
                 if(x.includes("0")) { frase += 'Diseñador(a)'; } 
                 if(x.includes("0") && x.includes("1")){frase += '; ';}
                 if(x.includes("1")) { frase += 'Diseñador(a) mención Industrial y Servicios'; } 
                 if(x.includes("0") && x.includes("2")){frase += '; ';}
+                if(x.includes("1") && x.includes("2")){frase += '; ';}
                 if(x.includes("2")) { frase += 'Diseñador(a) mención Visual y Medios'; } 
                 return frase;
             }
@@ -184,11 +199,22 @@
                 return enfatico;
             }
 
+
+            function disponibleTitulo(x) {
+                if(x == 0){
+                    return("<strong>No tiene cupos</strong> disponibles para tutela en Proyecto de Título I.")
+                } else if(x == 1){
+                    return("Tiene <strong>1 cupo</strong> disponible para tutela en Proyecto de Título I.")
+                } else { 
+                    return("Tiene <strong>" + x + " cupos</strong> disponibles para tutela en Proyecto de Título I.")
+                }
+            }
+
             function rol(x) {
                 if (x.includes("Prof.")) {
-                    return '<small>Por reglamento: <strong>Prof. Guía o Prof. Guía 1</strong></small>';
+                    return '<small>Rol: <strong>Prof. Guía o Prof. Guía 1</strong></small>';
                 } else {
-                    return '<small>Por reglamento: <strong>Prof. Guía 2</strong></small>';
+                    return '<small>Rol: <strong>Prof. Guía 2</strong></small>';
                 }
             }
 
