@@ -136,7 +136,7 @@
                                     <li class="list-group-item"><p class='text-body-secondary mb-1' style="min-height:6rem">${d.descriptor}</p></li>
                                   </ul>
                                   <div class="card-body small">
-                                    <p>Su(s) línea(s) de investigación en <strong>Seminario de Licenciatura, con una sección en mención ${seccion(d.menciones)}</strong>:</p>
+                                    <p>Su(s) línea(s) de investigación en <strong>Seminario de Licenciatura, ${seccion(d.menciones_sem)}</strong>:</p>
                                     <ul>${lineas(d.lineas)}</ul>
                                     <p>${disponibleSeminario(d.cupos_sem)}</p>
                                     <hr style="border-top:1px dotted silver; border-bottom:none;">
@@ -174,12 +174,14 @@
             }
 
             function seccion(x) {
-                if (x.includes("1")) {
-                    return "Industrial y Servicios";
-                } else if (x.includes("2")) {
-                    return "Visual y Medios";
+                if (x == "1") {
+                    return "con una sección en mención Industrial y Servicios";
+                } else if (x == "2") {
+                    return "con una sección en mención Visual y Medios";
+                } else if (x == "1 2") {
+                    return "con una sección en cada mención";
                 } else {
-                    return "no informada";
+                    return "sin sección creada";
                 }
             }
 
