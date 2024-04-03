@@ -49,13 +49,12 @@
 
                     <p class="mx-3 text-body-secondary small">[Para Profesor/a Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</p>
 
-                    <p><em>Debido a las horas docentes necesarias para atender a cada estudiante inscrita/o en ambos niveles de Seminario de Licenciatura y Proyecto de Título, se introduce la posibilidad de que la dirección reglamentada sea directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a colaborar como Profesores/as Guía 2, a condición de contar con un/a tutor/a que sí las cumpla (a quien se le denominará Profesor/a Guía 1).</p>
+                    <p>Esta dirección puede ser directa o indirecta. Cuando la responsabilidad de la tutela es directa, cada tutor(a) cumple el rol de <em>Prof. Guía</em>. Cuando es indirecta, cumple el rol de <em>Prof. Guía 1</em> y su tutela es mediada por un(a) <em>Prof. Guía 2</em>.</p>
 
-                    <p>Quienes se desempeñen como <em>Profesor/a Guía en Seminario de Licenciatura (I o II)</em>, aportarán su labor docente al <em>segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR</em>. Aportarán, más específicamente, a las competencias relacionadas con <em>I Evaluar</em> y <em>IV Sistematizar</em> (ver ámbitos de desempeño en art. 34 del <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a>).</p> 
-
-                    <p>Quienes se desempeñen como <em>Profesor/a Guía en Proyecto de Título (I o II)</em>, aportarán su labor docente al <em>tercer y último ciclo: PROPONER PARA TRANSFORMAR</em>. Aportarán las competencias relacionadas con <em>I Evaluar</em>, <em>II Crear</em>, <em>III Gestionar</em> y <em>IV Sistematizar</em> (ver ámbitos de desempeño en art. 34 del <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a>).</p>
                 </div>
             </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui">        
+
         </div>
 
         <div class="pt-5">
@@ -92,96 +91,181 @@
                 }
             });
 
-            var parciales = {
-                seminario: [],
-                titulo: []
-            };
-            var total;
-            var profes = [];
-            var docentesSinRepetir;
-            const docentes = document.querySelector("#docentes");
-            var todoSeminario = 0;
-            var todoTitulo = 0;
+            var todos = [];
+            var soloSeminario = [];
+            var soloTitulo = [];
+            var todosOK;
+            var soloSeminarioOK;
+            var soloTituloOK;
 
-            const guiades = document.querySelector("#guiades");
-            const guias =  document.querySelector("#profes");
-            const promedio = document.querySelector("#promedio");
+            const aqui = document.querySelector("#aqui");
+            const seleccionado = document.querySelector("#verCupos");
 
-            const guiasreglamento = document.querySelector("#profereglamento");
-            const promedioreglamento = document.querySelector("#promedioreglamento");
-
-
-            Papa.parse("https://raw.githubusercontent.com/disenoUChile/guiaturas/main/data/comisiones.csv", {
+            Papa.parse("https://raw.githubusercontent.com/disenoUChile/guiaturas/main/data/data-a-mano.csv", {
                 download: true,
                 header: true,
-                    dynamicTyping: true,
                 complete: function (results) {
-                    console.log(results);
-                    datos = results.data;
-                    datos.forEach((d) => {
-                        if (d.year == "4") { parciales.seminario.push(d); }
-                        if (d.year == "4") { parciales.titulo.push(d); }
-                        profes.push(d.profe);
-                    });
-                    total = parciales.seminario.length + parciales.titulo.length;
-                    docentesSinRepetir = [...new Set(profes)];
-                    docentesSinRepetir.forEach(x => {
-                        todoSeminario = todoSeminario + seminaristas(x);
-                        todoTitulo = todoTitulo + titulantes(x);
-                        if(x.includes("Rojas Miranda") || x.includes("Marín Pacheco") || x.includes("Tapia Reyes")){
-                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+9</td><td class="text-center fw-bold">${todas(x)+9}</td></tr>`;
-                        } else if(x.includes("Cortez Orellana") || x.includes("Castro Meza") ){
-                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+5</td><td class="text-center fw-bold">${todas(x)+5}</td></tr>`;
-                        } else {
-                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}</td><td class="text-center fw-bold">${todas(x)}</td></tr>`;
+                    console.log(results.data);
+                    results.data.forEach((d) => {
+                        if (d.id !== "—") {
+                            todos.push(d);
                         }
+                        if (d.id !== "—" && d.cupos_sem > 0) {
+                            soloSeminario.push(d);
+                        }
+                        if (d.id !== "—" && d.cupos_tit > 0) {
+                            soloTitulo.push(d);
+                        }
+                    });
 
-                    })
-                docentes.innerHTML += `<tr class="fw-bold"><td>TOTAL DE ESTUDIANTES GUIADAS/OS</td><td class="text-center">${todoSeminario}</td><td class="text-center">${todoTitulo+14}</td><td class="text-center fw-bold">${todoSeminario+todoTitulo+14}</td></tr>`
+                    todosOK = todos.slice(0, -1);
+                    soloSeminarioOK = soloSeminario.slice(0, -1);
+                    soloTituloOK = soloTitulo.slice(0, -1);
 
-                guiades.innerHTML = todoSeminario+todoTitulo+14;
-                guias.innerHTML = docentesSinRepetir.length;
-                promedio.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/docentesSinRepetir.length);
-
-
-                guiasreglamento.innerHTML = docentesSinRepetir.length-10;
-                promedioreglamento.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/(docentesSinRepetir.length-12));
+                    console.log(todosOK);
+                    console.log(soloSeminarioOK);
+                    console.log(soloTituloOK);
 
 
-                }
+                    //UNA FUNCIÓN QUE PREFIERO DEJAR ACÁ
 
+                    function construye(data) {
+                        data.forEach((d) => {
+                            aqui.innerHTML += `
+                            <div class="col my-4">
+                                <div class="card shadow-sm h-100">
+                                  <div class="card-header">
+                                    <h1 class="fs-5 mt-2">${nombre(d.name)}</h1>
+                                    <p>Jerarquía: ${d.nivel}<br/>
+                                    Adscripción: ${d.adscripcion}</p>
+                                    <p>${link(d.perfil)}</p>
+                                  </div>
+                                  <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><p class='text-body-secondary mb-1' style="min-height:6rem">${d.descriptor}</p></li>
+                                  </ul>
+                                  <div class="card-body small">
+                                    <p>Su(s) línea(s) de investigación en <strong>Seminario de Licenciatura, ${seccion(d.menciones_sem)}</strong>:</p>
+                                    <ul>${lineas(d.lineas)}</ul>
+                                    <hr style="border-top:1px dotted silver; border-bottom:none;">
+                                    <p class="text">Su(s) énfasis en <strong>Proyecto de Título Profesional de ${menciones(d.menciones)}</strong>:</p>
+                                    <ul>${enfasis(d.enfasis)}</ul>
+                                  </div>
+                                  <div class="card-footer">${rol(d.nivel)}</div>
+                                </div>
+                              </div>`;
+                        });
+                    }
 
-
+                    construye(todosOK);
+                },
             });
-            function todas(x) {
-                let numero = 0;
-                datos.forEach(d => {
-                    if (d.profe == x && d.estudiante) {
-                        numero++;
-                    }
-                })
-                return numero;
+
+            //OTRAS FUNCIONES, PARA AJUSTAR ALGUNAS COSAS
+
+            function nombre(x) {
+                let nombreCompleto = x.split(",");
+                return nombreCompleto[1] + " " + nombreCompleto[0];
             }
 
-            function seminaristas(x) {
-                let numero = 0;
-                datos.forEach(d => {
-                    if (d.profe == x && d.year == "4" && d.estudiante) {
-                        numero++;
-                    }
-                })
-                return numero;
+            function link(x) {
+                if (x.includes("Sin perfil")) {
+                    return "<small class='text-body-secondary'>Sin perfil en Portafolio Académico</small>";
+                } else {
+                    return (
+                        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16"><path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/><path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/></svg> <a href="' +
+                        x +
+                        '" class="small link-dark link-underline-opacity-25 link-underline-opacity-100-hover" target="_blank">Ver perfil en Portafolio Académico</a>'
+                    );
+                }
             }
 
-            function titulantes(x) {
-                let numero = 0;
-                datos.forEach(d => {
-                    if (d.profe == x && d.year == "5" && d.estudiante) {
-                        numero++;
-                    }
-                })
-                return numero;
+            function seccion(x) {
+                if (x == "1") {
+                    return "con una sección en mención Industrial y Servicios";
+                } else if (x == "2") {
+                    return "con una sección en mención Visual y Medios";
+                } else if (x == "1 2") {
+                    return "con una sección en cada mención";
+                } else {
+                    return "sin sección creada";
+                }
             }
+
+            function lineas(x) {
+                let listado = "";
+                if (x) {
+                    if (x.includes("1")) {
+                        listado += "<li>Diseño centrado en la persona</li>";
+                    }
+                    if (x.includes("2")) {
+                        listado += "<li>Materiales, Tecnologías y Procesos</li>";
+                    }
+                    if (x.includes("3")) {
+                        listado += "<li>Morfología, Percepción y Color</li>";
+                    }
+                    if (x.includes("4")) {
+                        listado += "<li>Identidad y Patrimonio</li>";
+                    }
+                    if (x.includes("5")) {
+                        listado += "<li>Estudios Visuales y Mediales</li>";
+                    }
+                    if (x.includes("6")) {
+                        listado += "<li>Diseño Editorial y Tipografía</li>";
+                    }
+                } else {
+                    listado = "<li>Líneas no informadas por Prof.</li>";
+                }
+                return listado;
+            }
+
+
+            function menciones(x) {
+                let frase = "";
+                if (x.includes("0")) {
+                    frase += "Diseñador(a)";
+                }
+                if (x.includes("0") && x.includes("1")) {
+                    frase += "; ";
+                }
+                if (x.includes("1")) {
+                    frase += "Diseñador(a) mención Industrial y Servicios";
+                }
+                if (x.includes("0") && x.includes("2")) {
+                    frase += "; ";
+                }
+                if (x.includes("1") && x.includes("2")) {
+                    frase += "; ";
+                }
+                if (x.includes("2")) {
+                    frase += "Diseñador(a) mención Visual y Medios";
+                }
+                return frase;
+            }
+
+            function enfasis(x) {
+                let enfatico = "";
+                if (x.includes("1")) {
+                    enfatico += "<li>Innovación</li>";
+                }
+                if (x.includes("2")) {
+                    enfatico += "<li>Investigación</li>";
+                }
+                if (x.includes("3")) {
+                    enfatico += "<li>Creación</li>";
+                }
+                return enfatico;
+            }
+
+
+            function rol(x) {
+                if (x.includes("Prof.")) {
+                    return "<small>Rol: <strong>Prof. Guía o Prof. Guía 1</strong></small>";
+                } else {
+                    return "<small>Rol: <strong>Prof. Guía 2</strong></small>";
+                }
+            }
+        </script>
+ 
         </script>
     </body>
 </html>
