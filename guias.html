@@ -51,6 +51,13 @@
 
                     <p>Esta dirección puede ser directa o indirecta. Cuando la responsabilidad de la tutela es directa, cada tutor(a) cumple el rol de <em>Prof. Guía</em>. Cuando es indirecta, cumple el rol de <em>Prof. Guía 1</em> y su tutela es mediada por un(a) <em>Prof. Guía 2</em>.</p>
 
+                    <p>En primer semestre de 2024, los(as) siguientes cumplen rol de 
+                        <select id="roles" class="form-select form-select-sm" style="display:inline-block; width:13rem">
+                            <option value="0">Prof. Guía y Prof. Guía 2</option>
+                            <option value="1">Prof. Guía o Prof. Guía 1</option>
+                            <option value="2">Prof. Guía 2</option>
+                        </select></p>
+
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui">        
@@ -132,7 +139,7 @@
                     function construye(data) {
                         data.forEach((d) => {
                             aqui.innerHTML += `
-                            <div class="col my-4">
+                            <article class="col my-4 ${claseRol(d.nivel)}">
                                 <div class="card shadow-sm h-100">
                                   <div class="card-header">
                                     <h1 class="fs-5 mt-2">${nombre(d.name)}</h1>
@@ -151,7 +158,7 @@
                                   </div>
                                   <div class="card-footer">${rol(d.nivel)}</div>
                                 </div>
-                              </div>`;
+                              </article>`;
                         });
                     }
 
@@ -263,6 +270,41 @@
                     return "<small>Rol: <strong>Prof. Guía 2</strong></small>";
                 }
             }
+
+            function claseRol(x) {
+                if (x.includes("Prof.")) {
+                    return "guia-2";
+                } else {
+                    return "guia-1";
+                }
+            }
+
+
+            document.querySelector("#roles").addEventListener("change", (event) => {
+                const unos = document.querySelectorAll(".guia-1");
+                const otros = document.querySelectorAll(".guia-2");                
+
+                if(event.target.value == 0){
+
+                    unos.forEach(u=> u.classList.remove("d-none"));
+                    otros.forEach(u=> u.classList.remove("d-none"));
+
+                } else if(event.target.value == 1){
+
+                    unos.forEach(u=> u.classList.add("d-none"));
+                    otros.forEach(u=> u.classList.remove("d-none"));
+
+                } else {
+                    unos.forEach(u=> u.classList.remove("d-none"));
+                    otros.forEach(u=> u.classList.add("d-none"));
+                }
+
+
+                datos().catch((error) => console.error(error));
+            });
+
+
+
         </script>
  
         </script>
