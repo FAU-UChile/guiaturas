@@ -47,13 +47,11 @@
 
                     <p class="mx-3 text-body-secondary small mb-2">[El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo <em>la dirección de</em> un(a) académico(a) con jerarquía de <em>Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado</em> que haya desarrollado investigación relacionada con el tema abordado (Art. 9)</p>
 
-                    <p class="mx-3 text-body-secondary small">[Para Profesor/a Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</p>
+                    <p class="mx-3 text-body-secondary small">[Para Profesor(a) Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</p>
 
                     <p>Esta dirección puede ser directa o indirecta. Cuando la responsabilidad de la tutela es directa, cada tutor(a) cumple el rol de <em>Prof. Guía</em>. Cuando es indirecta, cumple el rol de <em>Prof. Guía 1</em> y su tutela es mediada por un(a) <em>Prof. Guía 2</em>.</p>
 
-                    <p>En primer semestre de 2024, los(as) siguientes cumplen rol de 
-                        <select id="roles" class="form-select form-select-sm" style="display:inline-block; width:13rem">
-                            <option value="0">Prof. Guía y Prof. Guía 2</option>
+                    <p>En primer semestre de 2024, los(as) siguientes cumplen el rol de <select id="roles" class="form-select form-select-sm" style="display:inline-block; width:14rem; border:none; font-size:.95rem; background-color:#fff;">
                             <option value="1">Prof. Guía o Prof. Guía 1</option>
                             <option value="2">Prof. Guía 2</option>
                         </select></p>
@@ -273,9 +271,9 @@
 
             function claseRol(x) {
                 if (x.includes("Prof.")) {
-                    return "guia-2";
-                } else {
                     return "guia-1";
+                } else {
+                    return "guia-2 d-none";
                 }
             }
 
@@ -284,21 +282,17 @@
                 const unos = document.querySelectorAll(".guia-1");
                 const otros = document.querySelectorAll(".guia-2");                
 
-                if(event.target.value == 0){
+                if(event.target.value == 1){
 
                     unos.forEach(u=> u.classList.remove("d-none"));
-                    otros.forEach(u=> u.classList.remove("d-none"));
+                    otros.forEach(u=> u.classList.add("d-none"));
 
-                } else if(event.target.value == 1){
+                } else {
 
                     unos.forEach(u=> u.classList.add("d-none"));
                     otros.forEach(u=> u.classList.remove("d-none"));
 
-                } else {
-                    unos.forEach(u=> u.classList.remove("d-none"));
-                    otros.forEach(u=> u.classList.add("d-none"));
                 }
-
 
                 datos().catch((error) => console.error(error));
             });
