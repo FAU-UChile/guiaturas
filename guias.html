@@ -22,11 +22,10 @@
                                 <select class="form-select form-select-sm w-75 float-end m-0 py-1 px-2" onchange="location = this.value;">
                                     <option value="#">MENÚ</option>
                                     <option value="index.html">Abecé</option>
-                                     <option value="comisiones.html">Comisiones</option>                                   
+                                    <option value="comisiones.html">Comisiones</option>
                                     <option value="evaluaciones.html">Evaluaciones</option>
                                     <option value="guias.html" selected>Guías</option>
                                     <option value="memorias.html">Memorias</option>
-
                                 </select>
                             </div>
                         </div>
@@ -40,12 +39,14 @@
                 <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                     <h2 class="display mt-5 mb-4">Guías</h2>
 
-          <div id="aviso"></div>
-
+                    <div id="aviso"></div>
 
                     <p>El <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> establece que:</p>
 
-                    <p class="mx-3 text-body-secondary small mb-2">[El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo <em>la dirección de</em> un(a) académico(a) con jerarquía de <em>Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado</em> que haya desarrollado investigación relacionada con el tema abordado (Art. 9)</p>
+                    <p class="mx-3 text-body-secondary small mb-2">
+                        [El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo <em>la dirección de</em> un(a) académico(a) con jerarquía de
+                        <em>Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado</em> que haya desarrollado investigación relacionada con el tema abordado (Art. 9)
+                    </p>
 
                     <p class="mx-3 text-body-secondary small">[Para Profesor(a) Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</p>
 
@@ -53,25 +54,26 @@
 
                     <p>Cumpliendo con jerarquía y adscripción reglamentadas, cada Prof. Guía también puede cumplir el rol de <em>Prof. Guía 1</em>, haciendo una tutela indirecta gracias a un(a) <em>Prof. Guía 2</em>.</p>
 
-                    <p>En primer semestre del año 2024, son <span class="guia-1">29</span><span class="guia-2 d-none">15</span> quienes cumplen el rol de <select id="roles" class="form-select form-select-sm" style="display:inline-block; width:14rem; border:none; font-size:.95rem; background-color:#fff;">
+                    <p>
+                        En primer semestre del año 2024, son <span class="guia-1">29</span><span class="guia-2 d-none">15</span> quienes cumplen el rol de
+                        <select id="roles" class="form-select form-select-sm" style="display: inline-block; width: 14rem; border: none; font-size: 0.95rem; background-color: #fff;">
                             <option value="1">Prof. Guía o Prof. Guía 1</option>
                             <option value="2">Prof. Guía 2</option>
-                        </select></p>
-
+                        </select>
+                    </p>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui">        
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui"></div>
 
-        </div>
-
-        <div class="pt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
-                        <p class="small d-flex justify-content-between align-items-center text-body-secondary">
-                            <span><span class="d-none d-lg-inline">Desarrollado por </span><a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
-                            <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
-                        </p>
+            <div class="pt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                            <p class="small d-flex justify-content-between align-items-center text-body-secondary">
+                                <span><span class="d-none d-lg-inline">Desarrollado por </span><a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
+                                <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,7 +81,12 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+            integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
 
         <script>
             document.addEventListener("scroll", (event) => {
@@ -145,10 +152,10 @@
                                     <li class="list-group-item"><p class='text-body-secondary mb-1' style="min-height:6rem">${d.descriptor}</p></li>
                                   </ul>
                                   <div class="card-body small">
-                                    <p>Su(s) línea(s) de investigación en <strong>Seminario de Licenciatura, ${seccion(d.menciones_sem)}</strong>:</p>
+                                    ${areas(d.areas)}
+                                    <p>Atendiendo a las <a href="https://fau.uchile.cl/diseno/investigacion/investigacion" target="_blank" class="link-dark link-underline-opacity-10 link-underline-opacity-75-hover">Líneas de Investigación del Departamento de Diseño</a>, se relaciona con:</p>
                                     <ul>${lineas(d.lineas)}</ul>
-                                    <hr style="border-top:1px dotted silver; border-bottom:none;">
-                                    <p class="text">Su(s) énfasis en <strong>Proyecto de Título Profesional de ${menciones(d.menciones)}</strong>:</p>
+                                    <p class="text">Y atendiendo a los posibles énfasis del Ciclo 3 del Plan de Estudios del Programa Académico, se relaciona con:</p>
                                     <ul>${enfasis(d.enfasis)}</ul>
                                   </div>
                                   <div class="card-footer">${rol(d.nivel)}</div>
@@ -180,68 +187,46 @@
                 }
             }
 
-            function seccion(x) {
-                if (x == "1") {
-                    return "con una sección en mención Industrial y Servicios";
-                } else if (x == "2") {
-                    return "con una sección en mención Visual y Medios";
-                } else if (x == "1 2") {
-                    return "con una sección en cada mención";
+            function areas(x) {
+                if(x){
+                    let a = "";
+                    if (x.includes(1)) { a += "<li>ÁREA PRIORITARIA 1. SISTEMAS FÍSICOS, NATURALES Y CAMBIOS AMBIENTALES</li>" }
+                    if (x.includes(2)) { a += "<li>ÁREA PRIORITARIA 2. DIMENSIONES SOCIOECOLÓGICAS EN EL TERRITORIO</li>" }
+                    if (x.includes(3)) { a += "<li>ÁREA PRIORITARIA 3. ASENTAMIENTOS, MOVILIDADES Y ORGÁNICAS COMUNITARIAS</li>" }
+                    if (x.includes(4)) { a += "<li>ÁREA PRIORITARIA 4. DINÁMICAS Y TRANSFORMACIONES MORFOLÓGICAS, URBANAS Y RURALES</li>" }
+                    if (x.includes(5)) { a += "<li>ÁREA PRIORITARIA 5. CREACIÓN, INNOVACIÓN PROYECTUAL Y DESARROLLOS TECNOLÓGICOS</li>" }
+                    if (x.includes(6)) { a += "<li>ÁREA PRIORITARIA 6. CONSERVACIÓN E INTERVENCIÓN DE OBRAS, ENTORNOS Y CIUDADES PATRIMONIALES</li>" }
+                    if (x.includes(7)) { a += "<li>ÁREA PRIORITARIA 7. CULTURAS VISUALES, MATERIALES-INMATERIALES Y MEDIALES</li>" }
+                    if (x.includes(8)) { a += "<li>ÁREA PRIORITARIA 8. FENÓMENOS SENSIBLES, PERCEPTUALES Y CORPORALES EN EL ENTORNO</li>" }
+                    return "<p>Atendiendo al <a href='https://fau.uchile.cl/investigacion/investigacion-en-la-facultad/areas-prioritarias-de-investigacion' target='_blank' class='link-dark link-underline-opacity-10 link-underline-opacity-75-hover'>quehacer en investigación y creación de la Facultad de Arquitectura y Urbanismo</a>, se relaciona con:</p><ul>" + a + "</ul>"
                 } else {
-                    return "sin sección creada";
+                    return "";
                 }
             }
 
             function lineas(x) {
-                let listado = "";
-                if (x) {
+                let lineas = "";
                     if (x.includes("1")) {
-                        listado += "<li>Diseño centrado en la persona</li>";
+                        lineas += "<li>Diseño centrado en la persona</li>";
                     }
                     if (x.includes("2")) {
-                        listado += "<li>Materiales, Tecnologías y Procesos</li>";
+                        lineas += "<li>Materiales, Tecnologías y Procesos</li>";
                     }
                     if (x.includes("3")) {
-                        listado += "<li>Morfología, Percepción y Color</li>";
+                        lineas += "<li>Morfología, Percepción y Color</li>";
                     }
                     if (x.includes("4")) {
-                        listado += "<li>Identidad y Patrimonio</li>";
+                        lineas += "<li>Identidad y Patrimonio</li>";
                     }
                     if (x.includes("5")) {
-                        listado += "<li>Estudios Visuales y Mediales</li>";
+                        lineas += "<li>Estudios Visuales y Mediales</li>";
                     }
                     if (x.includes("6")) {
-                        listado += "<li>Diseño Editorial y Tipografía</li>";
+                        lineas += "<li>Diseño Editorial y Tipografía</li>";
                     }
-                } else {
-                    listado = "<li>Líneas no informadas por Prof.</li>";
-                }
-                return listado;
+                return lineas;
             }
 
-
-            function menciones(x) {
-                let frase = "";
-                if (x.includes("0")) {
-                    frase += "Diseñador(a)";
-                }
-                if (x.includes("0") && x.includes("1")) {
-                    frase += "; ";
-                }
-                if (x.includes("1")) {
-                    frase += "Diseñador(a) mención Industrial y Servicios";
-                }
-                if (x.includes("0") && x.includes("2")) {
-                    frase += "; ";
-                }
-                if (x.includes("1") && x.includes("2")) {
-                    frase += "; ";
-                }
-                if (x.includes("2")) {
-                    frase += "Diseñador(a) mención Visual y Medios";
-                }
-                return frase;
-            }
 
             function enfasis(x) {
                 let enfatico = "";
@@ -277,7 +262,7 @@
 
             document.querySelector("#roles").addEventListener("change", (event) => {
                 const unos = document.querySelectorAll(".guia-1");
-                const otros = document.querySelectorAll(".guia-2");                
+                const otros = document.querySelectorAll(".guia-2");
 
                 if(event.target.value == 1){
 
@@ -293,11 +278,6 @@
 
                 datos().catch((error) => console.error(error));
             });
-
-
-
-        </script>
- 
         </script>
     </body>
 </html>
