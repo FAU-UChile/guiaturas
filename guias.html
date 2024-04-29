@@ -141,7 +141,7 @@
                     function construye(data) {
                         data.forEach((d) => {
                             aqui.innerHTML += `
-                            <article class="col my-4 ${claseRol(d.nivel)}">
+                            <article class="col my-3 ${claseRol(d.nivel)}">
                                 <div class="card shadow-sm h-100">
                                   <div class="card-header">
                                     <h1 class="fs-5 mt-2">${nombre(d.name)}</h1>
@@ -158,7 +158,6 @@
                                     <p class="text">Y atendiendo a los posibles énfasis del Ciclo 3 del Plan de Estudios del Programa Académico, se relaciona con:</p>
                                     <ul>${enfasis(d.enfasis)}</ul>
                                   </div>
-                                  <div class="card-footer">${rol(d.nivel)}</div>
                                 </div>
                               </article>`;
                         });
@@ -190,14 +189,14 @@
             function areas(x) {
                 if(x){
                     let a = "";
-                    if (x.includes(1)) { a += "<li>ÁREA PRIORITARIA 1. SISTEMAS FÍSICOS, NATURALES Y CAMBIOS AMBIENTALES</li>" }
-                    if (x.includes(2)) { a += "<li>ÁREA PRIORITARIA 2. DIMENSIONES SOCIOECOLÓGICAS EN EL TERRITORIO</li>" }
-                    if (x.includes(3)) { a += "<li>ÁREA PRIORITARIA 3. ASENTAMIENTOS, MOVILIDADES Y ORGÁNICAS COMUNITARIAS</li>" }
-                    if (x.includes(4)) { a += "<li>ÁREA PRIORITARIA 4. DINÁMICAS Y TRANSFORMACIONES MORFOLÓGICAS, URBANAS Y RURALES</li>" }
-                    if (x.includes(5)) { a += "<li>ÁREA PRIORITARIA 5. CREACIÓN, INNOVACIÓN PROYECTUAL Y DESARROLLOS TECNOLÓGICOS</li>" }
-                    if (x.includes(6)) { a += "<li>ÁREA PRIORITARIA 6. CONSERVACIÓN E INTERVENCIÓN DE OBRAS, ENTORNOS Y CIUDADES PATRIMONIALES</li>" }
-                    if (x.includes(7)) { a += "<li>ÁREA PRIORITARIA 7. CULTURAS VISUALES, MATERIALES-INMATERIALES Y MEDIALES</li>" }
-                    if (x.includes(8)) { a += "<li>ÁREA PRIORITARIA 8. FENÓMENOS SENSIBLES, PERCEPTUALES Y CORPORALES EN EL ENTORNO</li>" }
+                    if (x.includes(1)) { a += "<li>Área Prioritaria 1. Sistemas físicos, naturales y cambios ambientales</li>" }
+                    if (x.includes(2)) { a += "<li>Área Prioritaria 2. Dimensiones socioecológicas en el territorio</li>" }
+                    if (x.includes(3)) { a += "<li>Área Prioritaria 3. Asentamientos, movilidades y orgánicas comunitarias</li>" }
+                    if (x.includes(4)) { a += "<li>Área Prioritaria 4. Dinámicas y transformaciones morfológicas, urbanas y rurales</li>" }
+                    if (x.includes(5)) { a += "<li>Área Prioritaria 5. Creación, innovación proyectual y desarrollos tecnológicos</li>" }
+                    if (x.includes(6)) { a += "<li>Área Prioritaria 6. Conservación e intervención de obras, entornos y ciudades patrimoniales</li>" }
+                    if (x.includes(7)) { a += "<li>Área Prioritaria 7. Culturas visuales, materiales-inmateriales y mediales</li>" }
+                    if (x.includes(8)) { a += "<li>Área Prioritaria 8. Fenómenos sensibles, perceptuales y corporales en el entorno</li>" }
                     return "<p>Atendiendo al <a href='https://fau.uchile.cl/investigacion/investigacion-en-la-facultad/areas-prioritarias-de-investigacion' target='_blank' class='link-dark link-underline-opacity-10 link-underline-opacity-75-hover'>quehacer en investigación y creación de la Facultad de Arquitectura y Urbanismo</a>, se relaciona con:</p><ul>" + a + "</ul>"
                 } else {
                     return "";
@@ -240,15 +239,6 @@
                     enfatico += "<li>Creación</li>";
                 }
                 return enfatico;
-            }
-
-
-            function rol(x) {
-                if (x.includes("Prof.")) {
-                    return "<small>Rol: <strong>Prof. Guía o Prof. Guía 1</strong></small>";
-                } else {
-                    return "<small>Rol: <strong>Prof. Guía 2</strong></small>";
-                }
             }
 
             function claseRol(x) {
